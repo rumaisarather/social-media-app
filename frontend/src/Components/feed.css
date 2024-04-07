@@ -1,0 +1,10 @@
+*{
+    margin:0;
+    font-family: 'Roboto',sans-serif;
+  }
+.feed{
+    flex:6;
+}
+.feedWrapper{
+    padding:20px;
+}
