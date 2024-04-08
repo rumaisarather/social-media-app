@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import "./comments.css";
  import { Commentx } from "./../dummyData";
@@ -14,7 +13,7 @@ const [commentText,setCommentText] = useState("");
   
   useEffect(()=>{
     const fetchComments = async () => {
-        const res = await axios.get("/comments/660800937b205730f4827c0e");
+        const res = await axios.get(`/comments/${postId}`);
         // console.log(res);
       setComments(res.data);
     };
@@ -24,7 +23,7 @@ const handleClick = async(e)=>{
   e.preventDefault();
  
 try{
-  await axios.post("/comments/660800937b205730f4827c0e",{
+  await axios.post(`/comments/${postId}`,{
     userId: currentUser._id,
     username: currentUser.username,
     userProfilePicture: "",
